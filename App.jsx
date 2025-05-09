@@ -2,25 +2,28 @@ import React from "react";
 import Die from "./Die";
 
 export default function App() {
-  //     function generateAllNewDice(min, max) {
-  //   return Math.floor(Math.random() * (max - min + 1)) + min;
-  // }
   function generateAllNewDice() {
     const newDice = [];
     for (let i = 0; i < 10; i++) {
-     let random = Math.floor(Math.random() * 6);
+      let random = Math.ceil(Math.random() * 6);
       newDice.push(random);
     }
-    return newDice
+    return newDice;
   }
-  console.log(generateAllNewDice());
 
+  const [dice, setDice] = React.useState(generateAllNewDice());
+
+  console.log(dice);
+  let diceElements = dice.map((die, index) => <Die value={die} key={index} />);
+
+  function rollDice(){
+    setDice(generateAllNewDice)
+  }
   return (
     <main>
-      <div className="dice-container">
-        <Die value={1} />
-       
-      </div>
+      <div className="dice-container">{diceElements}</div>
+      <button className="roll-btn" onClick={rollDice}>Roll</button>
     </main>
+
   );
 }

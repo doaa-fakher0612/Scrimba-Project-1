@@ -25,6 +25,7 @@ main {
   height: 100%;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -45,4 +46,14 @@ main {
      font-size: 1.75rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+.roll-btn{
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #5035FF;
+  border-radius: 5px;
+  color: #FFFFFF;
+border: none;
+cursor: pointer;
 }
