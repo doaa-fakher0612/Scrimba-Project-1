@@ -2,14 +2,23 @@ import React from "react";
 import Die from "./Die";
 
 export default function App() {
+  // function generateAllNewDice() {
+  //   const newDice = [];
+  //   for (let i = 0; i < 10; i++) {
+  //     let random = Math.ceil(Math.random() * 6);
+  //     newDice.push(random);
+  //   }
+  //   return newDice;
+  // }
+
   function generateAllNewDice() {
-    const newDice = [];
-    for (let i = 0; i < 10; i++) {
-      let random = Math.ceil(Math.random() * 6);
-      newDice.push(random);
-    }
-    return newDice;
-  }
+        return new Array(10)
+            .fill(0)
+            .map(() => ({value: Math.ceil(Math.random() * 6),
+                         isHeld : false})
+                )
+
+    } 
 
   const [dice, setDice] = React.useState(generateAllNewDice());
 
