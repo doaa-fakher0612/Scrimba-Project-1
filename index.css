@@ -57,3 +57,6 @@ main {
 border: none;
 cursor: pointer;
 }
+.is-held{
+  background-color: #59E391;
+}
